@@ -88,7 +88,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\fontomas-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\logo-kennedy.png" />
+    <Content Include="images\tick.png" />
+    <Content Include="Styles\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -102,7 +107,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="fonts\fontomas-webfont.eot" />
+    <Content Include="fonts\fontomas-webfont.ttf" />
+    <Content Include="fonts\fontomas-webfont.woff" />
     <None Include="packages.config" />
+    <Content Include="Views\_LayoutPage1.cshtml" />
+    <Content Include="Views\Account\InicioSesion.cshtml" />
+    <Content Include="Views\Account\LoginSuccessfully.cshtml" />
+    <Content Include="Views\Account\LoginError.cshtml" />
+    <Content Include="Views\Account\Registro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -112,7 +125,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Account\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
