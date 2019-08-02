@@ -13,6 +13,7 @@ namespace ClinicaAlcivar.Controllers
         SqlConnection con = new SqlConnection();
         SqlCommand com = new SqlCommand();
         SqlDataReader dr;
+        string connectionString = @"data source=LAECP-ELPT20017\SQLEXPRESS; database=ClinicaKennedy; integrated security = SSPI;";
         // GET: Account
         [HttpGet]
         public ActionResult InicioSesion()
@@ -26,7 +27,7 @@ namespace ClinicaAlcivar.Controllers
         }
         void CadenaConexion()
         {
-            con.ConnectionString = @"data source=LAECP-ELPT20017\SQLEXPRESS; database=ClinicaKennedy; integrated security = SSPI;";
+            con.ConnectionString = connectionString;
         }
         [HttpPost]
         public ActionResult Verificar(Account model)
@@ -50,25 +51,26 @@ namespace ClinicaAlcivar.Controllers
         [HttpPost]
         public ActionResult Registro(Account model)
         {
-            CadenaConexion();
-            con.Open();
-            com.Connection = con;
-            com.CommandText = @"insert into usuarios (Nombre,Contraseña,Cedula) values (@nombre,@contraseña,@cedula)";
-            com.Parameters.AddWithValue("@nombre", model.Nombre);
-            com.Parameters.AddWithValue("@contraseña", model.Contraseña);
-            com.Parameters.AddWithValue("@cedula", model.Cedula);
-            dr = com.ExecuteReader();
-            if (dr.Read())
+            if (ModelState.IsValid)
             {
-                con.Close();
-                return View("LoginSuccessfully");
+                using (SqlConnection sqlcon = new SqlConnection(connectionString))
+                {
+                    string sql = $"Insert into usuarios (Nombre,Contraseña,Cedula) values ('{model.Nombre}','{model.Contraseña}','{model.Cedula}')";
+
+                    using (SqlCommand command = new SqlCommand(sql,sqlcon))
+                    {
+                        command.CommandType = System.Data.CommandType.Text;
+                        sqlcon.Open();
+                        command.ExecuteNonQuery();
+                        sqlcon.Close();
+                    }
+                    return View("LoginSuccessfully");
+                }
             }
             else
             {
-                con.Close();
-                return View("LoginError");
+                return View();
             }
-            
         }
     }
 }
