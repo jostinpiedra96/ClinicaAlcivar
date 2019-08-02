@@ -32,6 +32,7 @@ namespace ClinicaAlcivar.Controllers
         [HttpPost]
         public ActionResult Verificar(Account model)
         {
+            ViewBag.Nombre = model.Nombre;
             CadenaConexion();
             con.Open();
             com.Connection = con;
@@ -55,7 +56,8 @@ namespace ClinicaAlcivar.Controllers
             {
                 using (SqlConnection sqlcon = new SqlConnection(connectionString))
                 {
-                    string sql = $"Insert into usuarios (Nombre,Contraseña,Cedula) values ('{model.Nombre}','{model.Contraseña}','{model.Cedula}')";
+                    string sql = $"Insert into usuarios (Nombre,Contraseña,Cedula,TipoUsuario) " +
+                        $"values ('{model.Nombre}','{model.Contraseña}','{model.Cedula}', '{model.TipoUsuario}')";
 
                     using (SqlCommand command = new SqlCommand(sql,sqlcon))
                     {

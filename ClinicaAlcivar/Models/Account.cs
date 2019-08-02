@@ -11,5 +11,6 @@ namespace ClinicaAlcivar.Models
         public string Nombre { get; set; }
         public string Contraseña { get; set; }
         public string Cedula { get; set; }
+        public string TipoUsuario { get; set; }
     }
 }

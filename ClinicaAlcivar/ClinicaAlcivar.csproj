@@ -91,6 +91,9 @@
     <Content Include="fonts\fontomas-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="images\1.jpg" />
+    <Content Include="images\c1.jpg" />
+    <Content Include="images\c2.jpg" />
+    <Content Include="images\c3.png" />
     <Content Include="images\logo-kennedy.png" />
     <Content Include="images\tick.png" />
     <Content Include="Styles\style.css" />
