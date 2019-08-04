@@ -94,6 +94,9 @@
     <Content Include="images\c1.jpg" />
     <Content Include="images\c2.jpg" />
     <Content Include="images\c3.png" />
+    <Content Include="images\k2.jpg" />
+    <Content Include="images\l1.jpg" />
+    <Content Include="images\l2.jpg" />
     <Content Include="images\logo-kennedy.png" />
     <Content Include="images\tick.png" />
     <Content Include="Styles\style.css" />
