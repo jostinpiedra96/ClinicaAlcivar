@@ -127,6 +127,7 @@
     <Content Include="Views\Servicios\Index.cshtml" />
     <Content Include="Views\Contacto\Index.cshtml" />
     <Content Include="Views\StaffMedico\Index.cshtml" />
+    <Content Include="Views\Account\Configuracion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
