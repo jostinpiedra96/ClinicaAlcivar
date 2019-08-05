@@ -1,34 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using ClinicaAlcivar.Models;
+﻿using ClinicaAlcivar.Models;
 using System.Data.SqlClient;
+using System.Web.Mvc;
 
 namespace ClinicaAlcivar.Controllers
 {
     public class AccountController : Controller
     {
-        SqlConnection con = new SqlConnection();
-        SqlCommand com = new SqlCommand();
-        SqlDataReader dr;
-        string connectionString = @"data source=LAECP-ELPT20017\SQLEXPRESS; database=ClinicaKennedy; integrated security = SSPI;";
+        private SqlConnection con = new SqlConnection();
+        private SqlCommand com = new SqlCommand();
+        private SqlDataReader dr;
+        private string connectionString = @"data source=LAECP-ELPT20017\SQLEXPRESS; database=ClinicaKennedy; integrated security = SSPI;";
+
         // GET: Account
         [HttpGet]
         public ActionResult InicioSesion()
         {
             return View();
         }
+
         [HttpGet]
         public ActionResult Registro()
         {
             return View();
         }
-        void CadenaConexion()
+
+        private void CadenaConexion()
         {
             con.ConnectionString = connectionString;
         }
+
         [HttpPost]
         public ActionResult Verificar(Account model)
         {
@@ -36,12 +36,20 @@ namespace ClinicaAlcivar.Controllers
             CadenaConexion();
             con.Open();
             com.Connection = con;
-            com.CommandText = "select * from usuarios where nombre = '"+model.Nombre+"' and contraseña = '"+model.Contraseña+"'"; //query
+            com.CommandText = "select tipousuario from usuarios where nombre = '" + model.Nombre + "' and contraseña = '" + model.Contraseña + "'"; //query
             dr = com.ExecuteReader();
             if (dr.Read())
             {
-                con.Close();
-                return View("LoginSuccessfully");
+                if (dr.GetValue(0).ToString() == "admin")
+                {
+                    con.Close();
+                    return View("Configuracion");
+                }
+                else
+                {
+                    con.Close();
+                    return View("LoginSuccessfully");
+                }
             }
             else
             {
@@ -49,6 +57,7 @@ namespace ClinicaAlcivar.Controllers
                 return View("LoginError");
             }
         }
+
         [HttpPost]
         public ActionResult Registro(Account model)
         {
@@ -59,7 +68,7 @@ namespace ClinicaAlcivar.Controllers
                     string sql = $"Insert into usuarios (Nombre,Contraseña,Cedula,TipoUsuario) " +
                         $"values ('{model.Nombre}','{model.Contraseña}','{model.Cedula}', '{model.TipoUsuario}')";
 
-                    using (SqlCommand command = new SqlCommand(sql,sqlcon))
+                    using (SqlCommand command = new SqlCommand(sql, sqlcon))
                     {
                         command.CommandType = System.Data.CommandType.Text;
                         sqlcon.Open();
