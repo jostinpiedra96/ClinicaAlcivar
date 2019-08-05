@@ -6,11 +6,10 @@ namespace ClinicaAlcivar.Controllers
 {
     public class AccountController : Controller
     {
-        private SqlConnection con = new SqlConnection();
-        private SqlCommand com = new SqlCommand();
-        private SqlDataReader dr;
-        private string connectionString = @"data source=LAECP-ELPT20017\SQLEXPRESS; database=ClinicaKennedy; integrated security = SSPI;";
-
+        SqlConnection con = new SqlConnection();
+        SqlCommand com = new SqlCommand();
+        SqlDataReader dr;
+        string connectionString = @"data source=LAECP-ELPT20017\SQLEXPRESS; database=ClinicaKennedy; integrated security = SSPI;"; 
         // GET: Account
         [HttpGet]
         public ActionResult InicioSesion()
