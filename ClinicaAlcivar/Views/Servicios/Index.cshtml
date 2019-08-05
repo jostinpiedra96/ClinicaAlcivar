@@ -2,6 +2,36 @@
 @{
     Layout = null;
 }
+<style>
+    #title{
+        text-align:center;
+        font-size: 80px;
+        color:black;
+        border-color:antiquewhite;
+
+    }
+    .imgService {
+        max-width: 100%;
+        height: 50%;
+        position: relative;
+        margin: auto;
+       
+        image-orientation: inherit;
+        margin-left: 30%;
+    }
+    .bk {
+         background-image: url('../../images/11111.jpg');
+    }
+    .pd {
+        margin-top:10%;
+        position:relative;
+        font-size:30px;
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+
+</style>
 
 <!DOCTYPE html>
 
@@ -10,8 +40,85 @@
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
 </head>
-<body>
-    <div> 
+<body class="bk" >
+    <h1 id="title">
+        Nuestros Servicios
+    </h1>
+    <div class="imgService">
+        <img src="~/images/S1.jpg"  style="width:60%" />
     </div>
+    <section class="pd">
+        <div>
+            <img src="~/images/d2.png" style="width:50%" />
+            <br />
+            <strong>Servicios Medicos</strong>
+
+            <p style="background-color:aliceblue; font-size: 20px;">
+                La idea de salud, por su parte, se vincula al bienestar físico y psicológico de una persona. Cuando un individuo goza de buena salud, su organismo puede ejecutar sus funciones con normalidad y su psiquis no presenta alteraciones.
+
+                Los servicios de salud, por lo tanto, son aquellas prestaciones que brindan asistencia sanitaria. Puede decirse que la articulación de estos servicios constituye un sistema de atención orientado al mantenimiento, la restauración y la promoción de la salud de las personas.
+
+                Es importante tener en cuenta que los servicios de salud no contemplan sólo el diagnostico y el tratamiento de enfermedades o trastornos. También abarcan todo lo referente a la prevención de los males y a la difusión de aquello que ayuda a desarrollar una vida saludable.
+
+                La mayoría de los países cuenta con servicios de salud públicos y privados. Los servicios públicos de salud son gestionados y financiados por el Estado, mientras que los servicios privados de salud se brindan a través de empresas que tienen fines de lucro.
+            </p>
+        </div>
+        <br />
+        <div>
+            <img src="~/images/d1.png" style="width:50%" />
+            <br />
+            <strong>Servicios Hospitalarios</strong>
+
+            <p style="background-color:aliceblue; font-size: 20px;">
+                Entre los servicios Medicos tenemos: Atención de emergencias las 24 Horas
+            </p>
+            <ul style="background-color:aliceblue ;font-size: 20px;">
+                <li>
+                    Audiometría
+                </li>
+                <li>
+                    Electrocardiograma
+                </li>
+                <li>
+                    Espirometría
+                </li>
+                <li>
+                    Farmacia
+                </li>
+                <li>
+                    Hospitalización
+                </li>
+                <li>
+                    Instituto de Salud de la Migración
+                </li>
+                <li>
+                    Laboratorio Clínico (revisa aquí INDICACIONES PARA EXÁMENES DE LABORATORIO)
+                </li>
+                <li>
+                    Medicina preventiva – chequeos
+
+                </li>
+
+
+
+
+            </ul>
+
+
+        </div>
+        <br />
+        <div>
+            <img src="~/images/d3.png" style="width:50%" />
+            <br />
+            <strong>Servicios Sociales</strong>
+
+            <p style="background-color:aliceblue; font-size: 20px;">
+                Los servicios sociales son el conjunto de servicios y actuaciones orientados a mejorar el bienestar social de la ciudadanía mediante la prestación de información, atención y apoyo a las personas y los colectivos vulnerables.1​ Los diferentes servicios son un acompañamiento a situaciones personales, familiares o sociales que requieren apoyo, mediante una valoración de la situación y la definición de un plan de trabajo, y también sirven de orientación sobre los recursos, las prestaciones y los servicios más adecuados a las necesidades concretas. Los otros dos pilares son el de los servicios sanitarios, el de los servicios educativos y el de las pensiones o prestaciones económicas de garantía de ingresos para la subsistencia.
+            </p>
+        </div>
+        <br />
+    </section>
+    
+    
 </body>
 </html>

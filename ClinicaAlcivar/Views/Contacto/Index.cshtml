@@ -3,36 +3,115 @@
     Layout = null;
 }
 <style>
-    #title{
-        text-align:center;
-        font-size: 80px;
-        color:black;
-        border-color:antiquewhite;
+    .contact-title {
+  font-size: 27px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+    .form-contact label {
+  font-size: 14px;
+}
 
-    }
-    .imgService {
-        max-width: 100%;
-        height: 50%;
-        position: relative;
-        margin: auto;
-       
-        image-orientation: inherit;
-        margin-left: 30%;
-    }
-    .bk {
-         background-image: url('../../images/11111.jpg');
-    }
-    .pd {
-        margin-top:10%;
-        position:relative;
-        font-size:30px;
-        text-align: center;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+.form-contact .form-group {
+  margin-bottom: 30px;
+}
+
+
+.form-contact .form-group .btn_1 {
+  margin-bottom: -30px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+
+.form-contact .form-control {
+  border: 1px solid #f0e9ff;
+  border-radius: 5px;
+  height: 48px;
+  padding-left: 18px;
+  font-size: 13px;
+  background-color:aliceblue;
+  width: 30%;
+  float: left;
+  margin-left: 10px;
+}
+
+
+.form-contact .form-control:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+
+.form-contact .form-control::placeholder {
+  font-weight: 300;
+  color: #999999;
+}
+
+
+.form-contact textarea {
+  border-radius: 12px;
+  height: 48% !important;
+}
+.button-contactForm {
+  color: #fff;
+  border-color: #edeff2;
+  padding: 12px 25px;
+}
+.button {
+  display: inline-block;
+  border: 1px solid transparent;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 54px;
+  border-radius: 4px;
+  color: #fff;
+  border: 1px solid #edeff2;
+  text-transform: uppercase;
+  background-color: #0065e1;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.button-contactForm {
+  color: #fff;
+  border-color: #edeff2;
+  padding: 12px 25px;
+}
+.btn_1 {
+  display: inline-block;
+  padding: 10.5px 36px;
+  font-size: 14px;
+  color: #000;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  text-transform: capitalize;
+  border: 1px solid #e4e6ea;
+  border-radius: 2px;
+  font-family: "Playfair Display", serif;
+  background-size: 200% auto;
+}
+.contact-info {
+  margin-bottom: 25px;
+}
+.contact-info__icon i, .contact-info__icon span {
+  color: #8f9195;
+  font-size: 27px;
+}
+.contact-info .media-body h3 {
+  font-size: 16px;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: #2a2a2a;
+} 
+.bk {
+        background-image: url('../../images/qa.jpg');
     }
 
 
 </style>
-
 <!DOCTYPE html>
 
 <html>
@@ -40,85 +119,75 @@
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
 </head>
-<body class="bk" >
-    <h1 id="title">
-        Nuestros Servicios
-    </h1>
-    <div class="imgService">
-        <img src="~/images/S1.jpg"  style="width:60%" />
+<body class="bk">
+    <div>
+        <h1 style="color:aliceblue;">Contactenos</h1>
     </div>
-    <section class="pd">
-        <div>
-            <img src="~/images/d2.png" style="width:50%" />
-            <br />
-            <strong>Servicios Medicos</strong>
-
-            <p style="background-color:aliceblue; font-size: 20px;">
-                La idea de salud, por su parte, se vincula al bienestar físico y psicológico de una persona. Cuando un individuo goza de buena salud, su organismo puede ejecutar sus funciones con normalidad y su psiquis no presenta alteraciones.
-
-                Los servicios de salud, por lo tanto, son aquellas prestaciones que brindan asistencia sanitaria. Puede decirse que la articulación de estos servicios constituye un sistema de atención orientado al mantenimiento, la restauración y la promoción de la salud de las personas.
-
-                Es importante tener en cuenta que los servicios de salud no contemplan sólo el diagnostico y el tratamiento de enfermedades o trastornos. También abarcan todo lo referente a la prevención de los males y a la difusión de aquello que ayuda a desarrollar una vida saludable.
-
-                La mayoría de los países cuenta con servicios de salud públicos y privados. Los servicios públicos de salud son gestionados y financiados por el Estado, mientras que los servicios privados de salud se brindan a través de empresas que tienen fines de lucro.
-            </p>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="contact-title">Escribenos</h2>
         </div>
-        <br />
-        <div>
-            <img src="~/images/d1.png" style="width:50%" />
-            <br />
-            <strong>Servicios Hospitalarios</strong>
+        <div class="col-lg-8">
+            <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
+                  novalidate="novalidate">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
 
-            <p style="background-color:aliceblue; font-size: 20px;">
-                Entre los servicios Medicos tenemos: Atención de emergencias las 24 Horas
-            </p>
-            <ul style="background-color:aliceblue ;font-size: 20px;">
-                <li>
-                    Audiometría
-                </li>
-                <li>
-                    Electrocardiograma
-                </li>
-                <li>
-                    Espirometría
-                </li>
-                <li>
-                    Farmacia
-                </li>
-                <li>
-                    Hospitalización
-                </li>
-                <li>
-                    Instituto de Salud de la Migración
-                </li>
-                <li>
-                    Laboratorio Clínico (revisa aquí INDICACIONES PARA EXÁMENES DE LABORATORIO)
-                </li>
-                <li>
-                    Medicina preventiva – chequeos
-
-                </li>
-
-
-
-
-            </ul>
-
-
+                            <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
+                                      onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingrese un mensaje'"
+                                      placeholder='Ingrese un mensaje'></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''"
+                                   onblur="this.placeholder = 'Ingresa tu nombre'" placeholder='Ingresa tu nombre'>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''"
+                                   onblur="this.placeholder = 'Ingresa tu email'" placeholder='Ingresa tu email'>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''"
+                                   onblur="this.placeholder = 'Ingrese asunto'" placeholder='Ingrese asunto'>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <button type="submit" class="button button-contactForm btn_1">Enviar Mensaje</button>
+                </div>
+            </form>
         </div>
-        <br />
-        <div>
-            <img src="~/images/d3.png" style="width:50%" />
-            <br />
-            <strong>Servicios Sociales</strong>
-
-            <p style="background-color:aliceblue; font-size: 20px;">
-                Los servicios sociales son el conjunto de servicios y actuaciones orientados a mejorar el bienestar social de la ciudadanía mediante la prestación de información, atención y apoyo a las personas y los colectivos vulnerables.1​ Los diferentes servicios son un acompañamiento a situaciones personales, familiares o sociales que requieren apoyo, mediante una valoración de la situación y la definición de un plan de trabajo, y también sirven de orientación sobre los recursos, las prestaciones y los servicios más adecuados a las necesidades concretas. Los otros dos pilares son el de los servicios sanitarios, el de los servicios educativos y el de las pensiones o prestaciones económicas de garantía de ingresos para la subsistencia.
-            </p>
+        <div class="col-lg-4" style="margin-top: 13%;">
+            <div class="media contact-info">
+                <span class="contact-info__icon"><i class="ti-home"></i></span>
+                <div class="media-body">
+                    <h3>Guayaquil</h3>
+                    <p>Alborada, CA 91770</p>
+                </div>
+            </div>
+            <div class="media contact-info">
+                <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                <div class="media-body">
+                    <h3>098655621</h3>
+                    <p>Abierto 24 horas</p>
+                </div>
+            </div>
+            <div class="media contact-info">
+                <span class="contact-info__icon"><i class="ti-email"></i></span>
+                <div class="media-body">
+                    <h3>erickcevallos@hotmail.com</h3>
+                   
+                </div>
+            </div>
         </div>
-        <br />
-    </section>
+    </div>
     
-    
+
 </body>
 </html>
